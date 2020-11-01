@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Seongbae\Discuss\DiscussFacade;
+//use \Seongbae\Discuss\Discuss;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $topics = DiscussFacade::getThreads();
+
+        return view('home', compact('topics'));
     }
 }

@@ -14,7 +14,12 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    @foreach($topics as $thread)
+                        <a href="{{ $thread->path() }}" style="font-size:1.2em;color:#22292f;">
+                            {{ $thread->title }}
+                        </a>
+                    @endforeach
+
                 </div>
             </div>
         </div>
